@@ -457,7 +457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489720934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.158769, y: 7.1251163, z: 7.589309}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -478,6 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 10
   height: 10
+  borders: []
   wall0Prefab: {fileID: 6624649927490035637, guid: ebcf370cdc4ed804db463db8b7970c09, type: 3}
   wall90Prefab: {fileID: 6624649927490035637, guid: 2c0197f737fa15248b7e9d519ee293de, type: 3}
 --- !u!1 &1496070952
