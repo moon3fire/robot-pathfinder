@@ -13,18 +13,26 @@ public class CameraController : MonoBehaviour
     private Vector3 lastMousePosition;
     private Vector3 center;
     private Vector3 lastPitchMousePosition;
-
+    private bool isCorrectedCoordinates;
     [SerializeField]
-    private MeshFilter groundMeshFilter;
+    private GameManager gameManager;
 
     private void Start()
     {
-        center = groundMeshFilter.sharedMesh.bounds.center;
-        radius = Mathf.Sqrt(transform.position.y * transform.position.y + transform.position.z * transform.position.z);
+        isCorrectedCoordinates = false;
     }
 
     private void Update()
     {
+        if(!isCorrectedCoordinates)
+        {
+            transform.position = new Vector3((gameManager.labyrinth.height - 1) * 10f, 25, 10f * gameManager.labyrinth.width / 2);
+            center = gameManager.ground.GetComponent<MeshFilter>().sharedMesh.bounds.center;
+            Debug.Log(center);
+            radius = Mathf.Sqrt(transform.position.y * transform.position.y + transform.position.z * transform.position.z);
+            isCorrectedCoordinates = true;
+            return;
+        }
         ZoomInOut();
         RotateCamera();
         MoveCameraUpDown();
@@ -81,7 +89,7 @@ public class CameraController : MonoBehaviour
         {
             Vector3 deltaMousePosition = Input.mousePosition - lastPitchMousePosition;
             pitchAngle -= deltaMousePosition.y * pitchSpeed;
-            pitchAngle = Mathf.Clamp(pitchAngle, 0f, 70f);
+            pitchAngle = Mathf.Clamp(pitchAngle, 0f, 85f);
             transform.localRotation = Quaternion.Euler(pitchAngle, transform.localRotation.eulerAngles.y, transform.localRotation.eulerAngles.z);
             lastPitchMousePosition = Input.mousePosition;
         }

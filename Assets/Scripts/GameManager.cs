@@ -1,22 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject wallGO;
-    void Start()
+    public LabyrinthGenerator labyrinth;
+    
+    public GameObject ground;
+    [SerializeField]
+    Material groundColor;
+    void Awake()
     {
-        /* TODO-FOR-GOR:: Haskanal kody incha anum
-         for(int i = 0; i < 5; ++i)
-        {
-            Instantiate(wallGO, new Vector3(Random.Range(-3f, 5f), 0, Random.Range(-5f, 3f)), wallGO.transform.rotation);
-        }
-        */
+        ground.transform.position = new Vector3(10 * (labyrinth.height - 1) / 2, 0, 10 * (labyrinth.width - 1) / 2);
+        ground.GetComponent<BoxCollider>().size = new Vector3(10 * labyrinth.height, 0, 10 * labyrinth.width);
+        ground.GetComponent<Transform>().localScale = new Vector3(10 * labyrinth.height, 0, 10 * labyrinth.width);
+        Material unlitMaterial = new Material(Shader.Find("Unlit/Color"));
+        unlitMaterial.color = groundColor.color;
+        ground.GetComponent<MeshRenderer>().material = unlitMaterial;
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+    }
+
     void Update()
     {
         

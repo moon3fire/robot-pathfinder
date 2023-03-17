@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cell = System.ValueTuple<int, int>;
 
-class LabyrinthGenerator : MonoBehaviour 
+public class LabyrinthGenerator : MonoBehaviour 
 {
     public int width = 10;
     public int height = 10;
