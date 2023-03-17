@@ -476,11 +476,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6ed6a3adeb62049893030a6aa752bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 10
-  height: 10
-  borders: []
+  width: 13
+  height: 14
   wall0Prefab: {fileID: 6624649927490035637, guid: ebcf370cdc4ed804db463db8b7970c09, type: 3}
   wall90Prefab: {fileID: 6624649927490035637, guid: 2c0197f737fa15248b7e9d519ee293de, type: 3}
+  emptySpacePrefab: {fileID: 4800962847027187890, guid: 8708845ad8182b84fa415799b740974a, type: 3}
 --- !u!1 &1496070952
 GameObject:
   m_ObjectHideFlags: 0

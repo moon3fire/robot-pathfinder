@@ -36,7 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\LabyrinthGenerator.cs" />
+     <Compile Include="Assets\Scripts\Labyrinth\LabyrinthGenerator.cs" />
      <Compile Include="Assets\Scripts\RobotMovement.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
     <Reference Include="UnityEngine">
