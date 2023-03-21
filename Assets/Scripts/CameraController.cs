@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour
         {
             transform.position = new Vector3((gameManager.labyrinth.height - 1) * 10f, 25, 10f * gameManager.labyrinth.width / 2);
             center = gameManager.ground.GetComponent<MeshFilter>().sharedMesh.bounds.center;
-            Debug.Log(center);
+            //Debug.Log(center);
             radius = Mathf.Sqrt(transform.position.y * transform.position.y + transform.position.z * transform.position.z);
             isCorrectedCoordinates = true;
             return;

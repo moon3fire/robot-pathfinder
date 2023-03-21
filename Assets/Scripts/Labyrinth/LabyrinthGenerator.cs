@@ -4,6 +4,8 @@ using Cell = System.ValueTuple<int, int>;
 
 public class LabyrinthGenerator : MonoBehaviour 
 {
+    public int solvePosX;
+    public int solvePosY;
     public int width = 10;
     public int height = 10;
     private float wallLength = 10f;
@@ -44,7 +46,10 @@ public class LabyrinthGenerator : MonoBehaviour
 
     void OpenExit()
     {
-        DestroyWall((0, UnityEngine.Random.Range(0, width)), Walls.UP_WALL);
+        //Debug.Log("width " + width);
+        solvePosX = 0;
+        solvePosY = UnityEngine.Random.Range(0, width);
+        DestroyWall((0, solvePosX), Walls.UP_WALL);
     }
 
     void InitializeMatrix()
