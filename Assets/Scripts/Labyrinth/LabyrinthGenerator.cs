@@ -5,7 +5,7 @@ using Cell = System.ValueTuple<int, int>;
 public class LabyrinthGenerator : MonoBehaviour 
 {
     public int solvePosX;
-    public int solvePosY;
+    public int solvePosZ;
     public int width = 10;
     public int height = 10;
     private float wallLength = 10f;
@@ -48,7 +48,7 @@ public class LabyrinthGenerator : MonoBehaviour
     {
         //Debug.Log("width " + width);
         solvePosX = 0;
-        solvePosY = UnityEngine.Random.Range(0, width);
+        solvePosZ = UnityEngine.Random.Range(0, width);
         DestroyWall((0, solvePosX), Walls.UP_WALL);
     }
 

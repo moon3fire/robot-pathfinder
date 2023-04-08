@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int robotPosX;
-    public int robotPosY;
+    public int robotPosZ;
 
     [SerializeField]
     public LabyrinthGenerator labyrinth;
@@ -35,9 +35,9 @@ public class GameManager : MonoBehaviour
         {
             cell.SetActive(false);
         }
-        robotPosY = (int)Random.Range(0, labyrinth.width);
+        robotPosZ = (int)Random.Range(0, labyrinth.width);
         robotPosX = (int)Random.Range(0, labyrinth.height);
-        robot.transform.position = new Vector3(10f * robotPosX, -0.5f, 10f * robotPosY);
+        robot.transform.position = new Vector3(10f * robotPosX, -0.5f, 10f * robotPosZ);
     }
 
     void Update()

@@ -11,7 +11,7 @@ public class Lidar : MonoBehaviour
     
     public RaycastHit hit;
 
-    public bool DoHaveLeftWall(int posX, int posY)
+    public bool DoHaveLeftWall()
     {
         transform.Rotate(0f, -90f, 0f, Space.Self);
         if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
@@ -23,7 +23,7 @@ public class Lidar : MonoBehaviour
         return false;
     }
 
-    public bool DoHaveUpWall(int posX, int posY)
+    public bool DoHaveUpWall()
     {
         if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
         {
@@ -32,7 +32,7 @@ public class Lidar : MonoBehaviour
         return false;
     }
 
-    public bool DoHaveRightWall(int posX, int posY)
+    public bool DoHaveRightWall()
     {
         transform.Rotate(0f, 90f, 0f, Space.Self);
         if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
@@ -44,7 +44,7 @@ public class Lidar : MonoBehaviour
         return false;
     }
 
-    public bool DoHaveDownWall(int posX, int posY)
+    public bool DoHaveDownWall()
     {
         transform.Rotate(0f, 180f, 0f, Space.Self);
         if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
